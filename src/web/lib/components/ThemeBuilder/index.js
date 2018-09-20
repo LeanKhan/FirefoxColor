@@ -7,6 +7,7 @@ import SavedThemeSelector from "../SavedThemeSelector";
 import ThemeBackgroundPicker from "../ThemeBackgroundPicker";
 import ThemeColorsEditor from "../ThemeColorsEditor";
 import ThemeCustomBackgroundPicker from "../ThemeCustomBackgroundPicker";
+import StaticThemePicker from "../StaticThemePicker";
 
 import "./index.scss";
 
@@ -25,12 +26,15 @@ export const ThemeBuilderTwo = props => {
     savedThemesPage,
     setSavedThemesPage,
     storage,
-    themeCustomImages
+    themeCustomImages,
   } = props;
 
   const tabList = [
+    { name: "Classic Themes",
+      id: "classic-themes"
+    },
     {
-      name: "Preset themes",
+      name: "Example Themes",
       id: "preset-themes"
     },
     {
@@ -61,6 +65,8 @@ export const ThemeBuilderTwo = props => {
 
   const renderThemingSection = selected => {
     switch (selected) {
+      case "classic-themes":
+        return <StaticThemePicker {...props} />;
       case "preset-themes":
         return <PresetThemeSelector {...props} />;
       case "colors":

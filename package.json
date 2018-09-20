@@ -146,7 +146,8 @@
     "permissions": [
       "theme",
       "storage",
-      "tabs"
+      "tabs",
+      "management"
     ],
     "browser_action": {
       "browser_style": true,
